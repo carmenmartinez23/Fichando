@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.border
 
 @Composable
 fun MainScreen() {
@@ -35,15 +36,15 @@ fun MainScreen() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Icon(Icons.Default.Menu, contentDescription = "Menu", modifier = Modifier.size(40.dp))
-            
+
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(text = "Maria", fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 Text(text = "Operador general", fontSize = 12.sp, color = Color.Gray)
             }
 
             Icon(
-                Icons.Default.Person, 
-                contentDescription = "Profile", 
+                Icons.Default.Person,
+                contentDescription = "Profile",
                 modifier = Modifier.size(40.dp).border(2.dp, Color(0xFF00C6FF), CircleShape),
                 tint = Color(0xFF00C6FF)
             )
@@ -73,22 +74,23 @@ fun MainScreen() {
 
         // 3. Sección Horario (Febrero 2026)
         Text(
-            text = "Horario", 
+            text = "Horario",
             modifier = Modifier.padding(horizontal = 16.dp),
-            fontSize = 18.sp, 
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
-        
+
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFFF0F9FF)),
-            border = BoxWithConstraintsScope.border // Simulamos el borde de la imagen.png
+                .padding(16.dp)
+                .border(1.dp, Color(0xFFBEE3F8), RoundedCornerShape(12.dp)),
+                colors = CardDefaults.cardColors(containerColor = Color(0xFFF0F9FF)),
+                shape = RoundedCornerShape(12.dp)
         ) {
             Column(modifier = Modifier.padding(8.dp)) {
                 Text(
-                    text = "< February 2026 >", 
+                    text = "< February 2026 >",
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     fontWeight = FontWeight.Bold
                 )
@@ -100,9 +102,9 @@ fun MainScreen() {
 
         // 4. Sección Chat
         Text(
-            text = "Chat", 
+            text = "Chat",
             modifier = Modifier.padding(horizontal = 16.dp),
-            fontSize = 18.sp, 
+            fontSize = 18.sp,
             fontWeight = FontWeight.Bold
         )
 
@@ -122,7 +124,7 @@ fun MainScreen() {
 
         // Entrada de mensaje
         Text(
-            text = "Mandar mensaje al grupo:", 
+            text = "Mandar mensaje al grupo:",
             modifier = Modifier.padding(horizontal = 16.dp),
             fontSize = 12.sp, color = Color.Gray
         )
