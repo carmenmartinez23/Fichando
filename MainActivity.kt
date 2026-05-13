@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -227,16 +228,21 @@ class MainActivity : ComponentActivity() {
             // --- CUERPO: Lista de opciones (Usando la lista menuOptions) ---
             menuOptions.forEach { option ->
                 NavigationDrawerItem(
-                    icon = { 
-                        Icon(option.icon, 
-                            contentDescription = null, 
-                            tint = Color.White, 
+                    icon = {
+                        Icon(option.icon,
+                            contentDescription = null,
+                            tint = Color.White,
                             modifier = Modifier
                                 .size(30.dp , 30.dp)
                         )},
                     label = {
                         Column {
-                            Text(option.title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                            Text(
+                                option.title, 
+                                color = Color.White, 
+                                fontWeight = FontWeight.Bold, 
+                                fontSize = 20.sp
+                            )
                             if (option.subtitle.isNotEmpty()) {
                                 Text(
                                     option.subtitle,
@@ -257,7 +263,8 @@ class MainActivity : ComponentActivity() {
                         // Aquí puedes añadir más: else if (option.title == "Horario") { ... }
                     },
                     colors = NavigationDrawerItemDefaults.colors(unselectedContainerColor = Color.Transparent),
-                    modifier = Modifier.padding(horizontal = 8.dp)
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp, vertical = 10.dp)
                 )
             }
 
