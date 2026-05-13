@@ -74,7 +74,7 @@ class MainActivity : ComponentActivity() {
             FichandoTheme {
                 val navController = rememberNavController()
                 val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-                val scope = rememberCoroutineScope() // CORREGIDO: con paréntesis
+                val scope = rememberCoroutineScope()
                 var globalProfileImage by remember { mutableStateOf<Uri?>(null) }
 
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
