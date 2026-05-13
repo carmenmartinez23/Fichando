@@ -48,8 +48,8 @@ fun LoginBackground() {
                 moveTo(0f, height * 0.20f) // Empezamos a dibujar un poco más abajo
                 cubicTo(
                     width * 0.2f, height * 0.30f, // Primer control
-                    width, height * 0.15f,  // Segundo control
-                    width, height * 0.25f        // Final de la curva
+                    width * 0.9f, height * 0.20f,  // Segundo control
+                    width, height * 0.2f        // Final de la curva
                 )
                 lineTo(width, height)
                 lineTo(0f, height)
@@ -62,7 +62,7 @@ fun LoginBackground() {
 }
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(onLoginSuccess: () -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -127,7 +127,7 @@ fun LoginScreen() {
 
             // Botón fiel: Azul oscuro, Rectangular suave, texto en Mayúsculas
             Button(
-                onClick = { /* Acción */ },
+                onClick = { onLoginSuccess() },
                 modifier = Modifier
                     .fillMaxWidth(0.6f)
                     .height(50.dp),
@@ -151,9 +151,9 @@ fun LoginScreen() {
     }
 }
 
-// Preview final: Llama a LoginScreen, que ya lo tiene todo dentro
 @Preview(showSystemUi = true)
 @Composable
 fun LoginPreview() {
-    LoginScreen()
+    // Le pasamos unas llaves vacías { } porque en la preview no necesitamos navegar
+    LoginScreen(onLoginSuccess = {})
 }
