@@ -238,9 +238,9 @@ class MainActivity : ComponentActivity() {
                     label = {
                         Column {
                             Text(
-                                option.title, 
-                                color = Color.White, 
-                                fontWeight = FontWeight.Bold, 
+                                option.title,
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold,
                                 fontSize = 20.sp
                             )
                             if (option.subtitle.isNotEmpty()) {
@@ -260,7 +260,6 @@ class MainActivity : ComponentActivity() {
                         if (option.title == "Perfil") {
                             navController.navigate("profile")
                         }
-                        // Aquí puedes añadir más: else if (option.title == "Horario") { ... }
                     },
                     colors = NavigationDrawerItemDefaults.colors(unselectedContainerColor = Color.Transparent),
                     modifier = Modifier
