@@ -86,7 +86,7 @@ fun MainScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(25.dp),
+                    .padding(15.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
@@ -95,11 +95,11 @@ fun MainScreen(
                         Icons.Default.Menu,
                         contentDescription = "Abrir Menú",
                         Modifier
-                            .size(60.dp)
+                            .size(80.dp)
                     )
                 }
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(text = "Maria", fontSize = 35.sp, fontWeight = FontWeight.Bold)
+                    Text(text = "Maria", fontSize = 32.sp, fontWeight = FontWeight.Bold)
                     Text(text = "Operador general", fontSize = 22.sp, color = Color.Gray)
                 }
                 Box(contentAlignment = Alignment.CenterEnd) {
